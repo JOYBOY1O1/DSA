@@ -1,15 +1,17 @@
 #include<iostream>
 using namespace std;
-
-void f(int i, int n){
-    if(i<1)return;
-    f(i-1,n); //using backtracking
-    cout<<i;
+//sum of n numbers
+void s(int i, int sum){
+    if(i<1){
+        cout<<sum;
+        return;
+    }
+    s(i-1,sum+i);
 }
 
 int main(){
 int n;
 cin>>n;
-f(n,n);
+s(n,0);
 return 0;
 }
